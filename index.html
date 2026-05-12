@@ -667,17 +667,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	history.scrollRestoration = "manual";
 
-	window.addEventListener("load", function () {
+	window.addEventListener("pageshow", function () {
 
 		if (!window.location.hash) {
 
 			setTimeout(() => {
-				window.scrollTo({
-					top: 0,
-					left: 0,
-					behavior: "instant"
-				});
-			}, 10);
+				window.scrollTo(0, 0);
+			}, 50);
 
 		}
 
