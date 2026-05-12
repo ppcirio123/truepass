@@ -667,9 +667,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	history.scrollRestoration = "manual";
 
-	window.onload = function () {
-		window.scrollTo(0, 0);
-	};
+	window.addEventListener("load", function () {
+
+		if (!window.location.hash) {
+
+			setTimeout(() => {
+				window.scrollTo({
+					top: 0,
+					left: 0,
+					behavior: "instant"
+				});
+			}, 10);
+
+		}
+
+	});
 
 </script>
 
