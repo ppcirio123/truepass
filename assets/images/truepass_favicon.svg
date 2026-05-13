@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48.362629mm"
+   height="40.000015mm"
+   viewBox="0 0 48.362627 40.000015"
+   version="1.1"
+   id="svg760"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="logo_truepass_tutti.svg"
+   inkscape:export-filename="Alix_logo_300dpi_765x236.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview762"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.2646927"
+     inkscape:cx="567.33149"
+     inkscape:cy="1687.7618"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true">
+    <sodipodi:guide
+       position="24.264815,-307.56434"
+       orientation="-1,0"
+       id="guide115"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="27.683805,-312.37611"
+       orientation="-1,0"
+       id="guide116"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="20.878815,-344.07106"
+       orientation="-1,0"
+       id="guide117"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <inkscape:page
+       x="-5.7625893e-21"
+       y="-4.8332742e-19"
+       width="48.362625"
+       height="40.000015"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs757" />
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-49.860002,-453.18579)">
+    <path
+       id="path78-8-2-8"
+       style="font-weight:600;font-size:35.2777px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';stroke-width:1.745"
+       d="m 77.549896,485.72698 v -24.69439 h 10.15998 q 3.28083,0 5.60915,1.05833 2.36361,1.05833 3.6336,3.03388 1.27,1.97555 1.27,4.69194 0,2.71638 -1.27,4.69193 -1.26999,1.97555 -3.6336,3.03388 -2.32832,1.05833 -5.60915,1.05833 h -7.61998 l 2.0461,-2.15194 v 9.27804 z m 4.5861,-8.78415 -2.0461,-2.22249 h 7.40831 q 3.03388,0 4.55083,-1.27 1.55221,-1.30527 1.55221,-3.6336 0,-2.36361 -1.55221,-3.63361 -1.51695,-1.26999 -4.55083,-1.26999 h -7.40831 l 2.0461,-2.25778 z" />
+    <path
+       style="font-weight:600;font-size:35.2777px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';stroke-width:1.745"
+       d="m 58.044436,485.72698 v -20.81384 h -8.18443 v -3.88055 h 20.954963 v 3.88055 h -8.184433 v 20.81384 z"
+       id="text38-1-1-7-5" />
+    <rect
+       style="fill:#aa0000;fill-opacity:1;stroke-width:1.72946;stroke-dasharray:none"
+       id="rect115-9-8-1-11-1"
+       width="1.8"
+       height="40"
+       x="73.147041"
+       y="453.18573" />
+  </g>
+</svg>

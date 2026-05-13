@@ -8,23 +8,18 @@
   <link rel="icon" href="assets/images/truepass_favicon.svg" type="image/svg+xml">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/truepass_favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/truepass_favicon_apple-touch-icon.png">
-
-
-<!--  <link rel="shortcut icon" href="assets/images/truepass_favicon.svg" type="image/x-icon">
-  <link rel="alternate shortcut icon" href="assets/images/truepass_favicon.png" type="image/x-icon">
-  <meta name="description" content="">--!>
+  <meta name="description" content="">  
   
-  
-  <title>Home</title>
-  <link rel="stylesheet" href="assets/web/assets/truepass-icons2/truepass.css">
-  <link rel="stylesheet" href="assets/web/assets/truepass-icons-bold/truepass-icons-bold.css">
+  <title>TRUEPASS</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/truepass/css/mbr-additional.css?v=sPnPL6"><link rel="stylesheet" href="assets/truepass/css/mbr-additional.css?v=sPnPL6" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=sPnPL6"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=sPnPL6" type="text/css">
   
   <style>
 		html {
@@ -36,8 +31,155 @@
 	section {
 		scroll-margin-top: 30px;
 	}
-  </style>    
-  
+  </style>
+
+<!--STILE PER SEZIONE COME FUNZIONA-->
+<style>
+.tp-step {
+    position: relative;
+    padding: 40px 25px;
+    transition: all 0.3s ease;
+}
+
+.tp-step-number {
+    position: absolute;
+    top: -25px;
+    left: 10px;
+    font-size: 6.5rem;
+    font-weight: 800;
+    color: rgba(170, 0, 0, 0.16);
+    pointer-events: none;
+}
+
+/* ANIMAZIONE BASE */
+.tp-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+/* quando diventa visibile */
+.tp-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tp-reveal:nth-child(1) { transition-delay: 0.1s; }
+.tp-reveal:nth-child(2) { transition-delay: 0.2s; }
+.tp-reveal:nth-child(3) { transition-delay: 0.3s; }
+
+/* mobile */
+@media (max-width: 768px) {
+    .tp-step-number {
+        font-size: 4rem;
+        top: -10px;
+    }
+}
+</style>
+
+<!-- STILE SEZIONE A CHI SI RIVOLGE -->
+<style>
+
+#target-sectors .card-wrapper {
+    background: #ffffff;
+    border-radius: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+}
+
+#target-sectors .card-wrapper:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+}
+
+#target-sectors .mbr-iconfont {
+    font-size: 4rem;
+}
+
+</style>
+
+<!--STYLE PER CARD LICENSING-->
+<style>
+.pricing2 .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pricing2 .col-lg-3 {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.pricing2 .plan {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.pricing2 .plan-title {
+    margin-bottom: 0px !important;
+}
+
+.pricing2 .plan-list {
+    margin-bottom: 0 !important;
+}
+</style>
+
+
+<!--STYLE PER IMMAGINE ELENCO MODULI-->
+<style>
+.module-preview-wrap {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* contenitore generale */
+.saas-mockup {
+    width: 70%;
+    max-width: 300px;
+}
+
+/* glow morbido stile Apple */
+.saas-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(
+        circle at 30% 20%,
+        rgba(99, 102, 241, 0.25),
+        transparent 60%
+    );
+    filter: blur(25px);
+    z-index: 0;
+}
+
+/* finestra tipo app */
+.saas-window {
+    position: relative;
+    z-index: 2;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.12),
+        0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* immagine */
+.saas-img {
+    width: 100%;
+    display: block;
+    transform: scale(1.01);
+    transition: transform 0.4s ease;
+}
+
+.saas-window:hover .saas-img {
+    transform: scale(1.04);
+}
+
+</style>
+
 </head>
 
 <body>
@@ -77,10 +219,6 @@
 
 <section data-bs-version="5.1" class="header14 cid-sFzxmVl7J6" id="header14-1f">
 
-    
-
-    
-
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-12 col-md-6 image-wrapper">
@@ -89,9 +227,7 @@
             <div class="col-12 col-md">
                 <div class="text-wrapper">
                     <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2"><strong>La piattaforma per Digital Product Passport, tracciabilità e autenticità.</strong></h1>
-                    <!--<h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Sicurezza e tracciabilità digitale</strong></h1>--!>
                     <p class="mbr-text mbr-fonts-style display-7">Gestisci dati, conformità e verifiche del prodotto&nbsp;<strong>in un’unica piattaforma</strong>.</p>
-                    <!--<p class="mbr-text mbr-fonts-style display-7">Con TRUEPASS ogni prodotto è&nbsp;<strong>tracciabile,&nbsp;verificabile e sempre sotto controllo</strong>.</p>--!>
                     <div class="mbr-section-btn mt-3"><a class="btn btn-secondary display-4" href="index.html#form5-1m">Richiedi demo</a>
                         <a class="btn btn-primary display-4" href="index.html#features1-1i">Scopri di più</a></div>
                 </div>
@@ -100,9 +236,7 @@
 	</div>
 </section>
 
-<section data-bs-version="5.1" class="features1 cid-sFzyUE9AaP" id="features1-1i">
-    
-
+<section data-bs-version="5.1" class="features1 cid-sFzyUE9AaP features-large" id="features1-1i">
     
     <div class="container-fluid">
         <div class="row">
@@ -160,11 +294,9 @@
     </div>
 </section>
 
+<!--SEZIONE DPP-->
+
 <section data-bs-version="5.1" class="header14 cid-sFzz5E692j" id="header14-1j">
-
-    
-
-    
 
     <div class="container">
         <div class="row justify-content-center align-items-center">
@@ -173,9 +305,9 @@
             </div>
             <div class="col-12 col-md">
                 <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-2">
-                        <strong>Il Digital Product Passport (DPP)</strong></h3>
-                    <p class="mbr-text mbr-fonts-style display-7">Il DPP è diventato obbligatorio con il regolamento ESPR (Ecodesign for Sustainable Products Regulation), entrato in vigore nel 2024.<br>Entro il 2030 sarà richiesto per la maggior parte dei prodotti immessi sul mercato europeo.<br>Richiede informazioni su origine dei materiali, processi produttivi, impatto ambientale, composizione, riparabilità e smaltimento.<br><br>TRUEPASS ti aiuta a rendere la tua organizzazione conforme a questi requisiti.<br></p>
+                    <h3 class="mbr-section-title mbr-fonts-style mb-0 display-2">
+                        Il Digital Product Passport (DPP).</h3>
+                    <p class="mbr-text mbr-fonts-style display-7"><br>Il DPP è diventato obbligatorio con il regolamento ESPR (Ecodesign for Sustainable Products Regulation), entrato in vigore nel 2024.<br>Entro il 2030 sarà richiesto per la maggior parte dei prodotti immessi sul mercato europeo.<br>Richiede informazioni su origine dei materiali, processi produttivi, impatto ambientale, composizione, riparabilità e smaltimento.<br><br><strong>TRUEPASS</strong> ti aiuta a rendere la tua organizzazione conforme a questi requisiti.<br></p>
                     <div class="mbr-section-btn mt-3"><a class="btn btn-secondary display-4" href="index.html#form5-1m">Richiedi demo</a></div>
                 </div>
             </div>
@@ -183,30 +315,266 @@
     </div>
 </section>
 
-<section data-bs-version="5.1" class="features13 cid-viPRwSdpeO" id="features13-1">
+<!--SEZIONE COME FUNZIONA-->            
 
-    
+<section data-bs-version="5.1" class="features1 cid-sFzyUE9AaP" id="how-it-works">
 
+  <div class="container">
+    <h2 class="mbr-section-title align-center mbr-fonts-style mb-0 display-2">
+      Come funziona.
+    </h2>
+
+<div class="row mt-4">
+
+    <div class="col-md-3">
+        <div class="tp-step tp-reveal">
+            <div class="tp-step-number">01</div>
+            <h4 class="card-title mbr-fonts-style display-5"><strong>Crea<br>il prodotto</strong></h4>
+            <p class="card-text mbr-fonts-style display-7">
+                Inserisci o importa i dati del prodotto,
+                materiali e lotti di etichette/QRcode.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="tp-step tp-reveal">
+            <div class="tp-step-number">02</div>
+            <h4 class="card-title mbr-fonts-style display-5"><strong>Genera<br>il passaporto</strong></h4>
+            <p class="card-text mbr-fonts-style display-7">
+                TRUEPASS crea automaticamente il DPP per ogni tuo prodotto.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="tp-step tp-reveal">
+            <div class="tp-step-number">03</div>
+            <h4 class="card-title mbr-fonts-style display-5"><strong>Verifica<br>l'autenticità</strong></h4>
+            <p class="card-text mbr-fonts-style display-7">
+                Controlla con una scansione sei il prodotto è autentico.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+        <div class="tp-step tp-reveal">
+            <div class="tp-step-number">04</div>
+            <h4 class="card-title mbr-fonts-style display-5"><strong>Consulta<br>il DPP</strong></h4>
+            <p class="card-text mbr-fonts-style display-7">
+                Leggi i dati ed il passaporto del prodotto via QRcode.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- SEZIONE A CHI SI RIVOLGE -->
+
+<section class="features1 py-5" id="target-sectors">
+
+    <div class="container">
+
+        <div class="row justify-content-center mb-5">
+
+            <div class="col-12 col-lg-8 text-center">
+
+                <h2 class="mbr-section-title mbr-fonts-style display-2">
+                    A chi si rivolge.
+                </h2>
+
+            </div>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- MODA -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card-wrapper p-4 h-100" style="background-color: rgb(170,0,0,0.16)">
+
+                    <div class="iconfont-wrapper">
+                        <span class="mbr-iconfont mbrib-user mobi-mbri"
+                              style="color: rgb(170,0,0)"></span>
+                    </div>
+
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Moda &amp; Lusso</strong>
+                    </h4>
+
+                    <p class="card-text mbr-fonts-style display-7">
+                        Proteggi i prodotti dalla contraffazione
+                        e offri autenticità verificabile tramite QRcode e DPP.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- INDUSTRIA -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card-wrapper p-4 h-100" style="background-color: rgb(170,0,0,0.16)">
+
+                    <div class="iconfont-wrapper mb-3">
+                        <span class="mbr-iconfont mbrib-setting3"
+                              style="color: rgb(170,0,0);"></span>
+                    </div>
+
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Produzione Industriale</strong>
+                    </h4>
+
+                    <p class="card-text mbr-fonts-style display-7">
+                        Traccia ordini, lotti, componenti e processi
+                        lungo tutta la supply chain.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- AUTOMOTIVE -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card-wrapper p-4 h-100" style="background-color: rgb(170,0,0,0.16)">
+
+                    <div class="iconfont-wrapper mb-3">
+                        <span class="mbr-iconfont mbrib-delivery"
+                              style="color: rgb(170,0,0);"></span>
+                    </div>
+
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Automotive</strong>
+                    </h4>
+
+                    <p class="card-text mbr-fonts-style display-7">
+                        Gestisci serializzazione, conformità
+                        e tracciabilità dei componenti.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- COSMETICA -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card-wrapper p-4 h-100" style="background-color: rgb(170,0,0,0.16)">
+
+                    <div class="iconfont-wrapper mb-3">
+                        <span class="mbr-iconfont mbrib-hearth"
+                              style="color: rgb(170,0,0);"></span>
+                    </div>
+
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Cosmetica</strong>
+                    </h4>
+
+                    <p class="card-text mbr-fonts-style display-7">
+                        Controlla ingredienti, lotti e conformità normativa
+                        con verifica immediata del prodotto.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FOOD -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card-wrapper p-4 h-100" style="background-color: rgb(170,0,0,0.16)">
+
+                    <div class="iconfont-wrapper mb-3">
+                        <span class="mbr-iconfont mbrib-shopping-basket"
+                              style="color: rgb(170,0,0);"></span>
+                    </div>
+
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Food Premium</strong>
+                    </h4>
+
+                    <p class="card-text mbr-fonts-style display-7">
+                        Valorizza origine, autenticità e trasparenza
+                        della filiera alimentare.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- DESIGN -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <div class="card-wrapper p-4 h-100" style="background-color: rgb(170,0,0,0.16)">
+
+                    <div class="iconfont-wrapper mb-3">
+                        <span class="mbr-iconfont mbrib-home"
+                              style="color: rgb(170,0,0);"></span>
+                    </div>
+
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Design &amp; Arredo</strong>
+                    </h4>
+
+                    <p class="card-text mbr-fonts-style display-7">
+                        Documenta materiali, sostenibilità
+                        e ciclo di vita dei prodotti.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
     
-    
+<!--SEZIONE I MODULI--> 
+
+<section data-bs-version="5.1" class="features13 cid-viPRwSdpeO" id="features13-1">	
+   
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6">
                 <div class="card-wrapper">
                     <div class="card-box align-left">
                         <h4 class="card-title mbr-fonts-style mb-4 display-2">
-                            <strong>I moduli</strong><br><strong>di TRUEPASS</strong></h4>
+                            I moduli<br> di TRUEPASS.</h4>
                         <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                            Gestisci i tuoi prodotti in modo digitale, sicuro e conforme lungo tutta la filiera.</p>
+                            Gestisci i tuoi prodotti in modo digitale, sicuro e conforme lungo tutta la filiera.</p>							
+						<div class="module-preview-wrap mb-4">
+							<div class="saas-mockup">
+								<div class="saas-glow"></div>
+								<div class="saas-window">
+									<img src="assets/images/truepass_screeenshot1.png"
+										alt="TRUEPASS Dashboard"
+										class="saas-img">
+								</div>
+							</div>
+						</div>
                         <div class="mbr-section-btn"><a class="btn btn-secondary display-4" href="index.html#form5-1m">Richiedi demo</a></div>
-                    </div>
+                    </div>	
                 </div>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-5">
                 <div class="item features-without-image active">
                     <div class="item-wrapper mbr-flex">
                         <div class="icon-box">
-                            <span class="mbr-iconfont mbrib-edit"></span>
+                            <span class="mbr-iconfont mbrib-edit"></span>						
                         </div>
                         <div class="text-box">
                             <h4 class="icon-title mbr-black mbr-fonts-style display-7"><strong>Flusso ordini</strong></h4>
@@ -281,13 +649,15 @@
     </div>
 </section>
 
+<!--IL SISTEMA DI LICENSING-->
+
 <section data-bs-version="5.1" class="content4 cid-sFzIdnt1ra" id="content4-1q">
     
     
     <div class="container">
         <div class="row justify-content-center">
             <div class="title col-md-12 col-lg-10">
-                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Il sistema di licensing</strong></h3>
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">Il sistema di licensing.</h3>
                 
                 
             </div>
@@ -302,7 +672,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 align-center col-lg-3">
-                <div class="plan">
+                <div class="plan" style="background-color: rgb(170,0,0,0.16)">
                     <div class="plan-header">
                         <h6 class="plan-title mbr-fonts-style mb-3 display-5">
                             <strong>Standard</strong></h6>
@@ -322,7 +692,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 align-center col-lg-3">
-                <div class="plan">
+                <div class="plan" style="background-color: rgb(170,0,0,0.16)">
                     <div class="plan-header">
                         <h6 class="plan-title mbr-fonts-style mb-3 display-5">
                             <strong>Professional</strong></h6>
@@ -333,7 +703,7 @@
                     </div>
                     <div class="plan-body">
                         <div class="plan-list mb-4">
-                            <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                            <ul class="list-group mbr-fonts-style list-group-flush display-4">
                                 <li class="list-group-item">fino a 10 utenti</li><li class="list-group-item">fino a 10.000 etichette</li><li class="list-group-item">fino a 50.000 scansioni/mese</li>
                             </ul>
                         </div>
@@ -342,10 +712,10 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 align-center col-lg-3">
-                <div class="plan">
+                <div class="plan" style="background-color: rgb(170,0,0,0.16)">
                     <div class="plan-header">
-                        <h6 class="plan-title mbr-fonts-style mb-3 display-5"><p>
-                            <strong>Enterp</strong><strong>rise</strong></p></h6>
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                            <strong>Enterprise</strong></h6>
                         <div class="plan-price">
                             <p class="price mbr-fonts-style m-0 display-2"></p>
                             <p class="price-term mbr-fonts-style mb-3 display-7"></p>
@@ -353,7 +723,7 @@
                     </div>
                     <div class="plan-body">
                         <div class="plan-list mb-4">
-                            <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                            <ul class="list-group mbr-fonts-style list-group-flush display-4">
                                 <li class="list-group-item">fino a 20 utenti</li><li class="list-group-item">fino a 25.000 etichette</li><li class="list-group-item">fino a 150.000 scansioni/mese</li>
                             </ul>
                         </div>
@@ -362,7 +732,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 align-center col-lg-3">
-                <div class="plan">
+                <div class="plan" style="background-color: rgb(170,0,0,0.16)">
                     <div class="plan-header">
                         <h6 class="plan-title mbr-fonts-style mb-3 display-5">
                             <strong>Unlimited</strong>
@@ -374,7 +744,7 @@
                     </div>
                     <div class="plan-body">
                         <div class="plan-list mb-4">
-                            <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                            <ul class="list-group mbr-fonts-style list-group-flush display-4">
                                 <li class="list-group-item">utenti illimitati</li><li class="list-group-item">etichette illimitate</li><li class="list-group-item">scansioni illimitate</li>
                             </ul>
                         </div>
@@ -423,9 +793,9 @@ Il team di TRUEPASS</div>
             </div>
         </div>
     </div>
-</section>--!>
+</section>-->
 
-
+<!--SEZIONE CONTATTACI-->
 <section data-bs-version="5.1" class="form5 cid-sFzDs3t9EG" id="form5-1m">
 
     <div class="container">
@@ -433,7 +803,7 @@ Il team di TRUEPASS</div>
         <div class="mbr-section-head">
 
             <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                <strong>Contattaci</strong>
+                Contattaci.
             </h4>
 
             <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7">
@@ -687,6 +1057,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	});
 
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const elements = document.querySelectorAll(".tp-reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+});
 </script>
 
 </body>
