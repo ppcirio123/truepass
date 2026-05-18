@@ -180,43 +180,178 @@
 
 </style>
 
+<!--STYLE PER GESTIONE LINGUA-->
+<style>
+.lang-btn {
+    width: 32px;
+    height: 28px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: transparent;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lang-btn.active {
+    background: #111;
+    color: white;
+    border-color: #111;
+}
+</style>
+
+<!--STYLE PER EVITARE IL FLASH SULLA LINGUA NEL REFRESH--> 
+<style>
+    body {
+        visibility: hidden;
+    }
+</style>
+
 </head>
 
 <body>
+
+<!--SETTARE LINGUA-->
+<script>
+
+(function () {
+
+    const lang = localStorage.getItem("lang") || "it";
+
+    document.documentElement.setAttribute("lang", lang);
+
+    window.currentLang = lang;
+
+})();
+
+</script>
   
-  <section data-bs-version="5.1" class="menu menu2 cid-sFCw1qGFAI" once="menu" id="menu2-23">
-   
-    <nav class="navbar navbar-dropdown navbar-expand-lg">
-        <div class="container">
-            <div class="navbar-brand">
-				
-				<span class="navbar-logo">
-                    <a href="https://www.truepass.it">
-                        <img src="assets/images/truepass_logo.svg" oncontextmenu="return false;" alt="TruePass Website" style="height: 3rem;">
-					</a>
-                </span>
-							
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="#top">Home</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#features1-1i">Vantaggi</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#features13-1">Moduli</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#content4-1q">Licenze</a>
-                    </li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#form5-1m">Contatti</a></li></ul>
-                
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" target="_blank" href="http://www.truepass.it">Accedi</a></div>
-            </div>
+<!--SEZIONE MENU-->
+<section data-bs-version="5.1" class="menu menu2 cid-sFCw1qGFAI" once="menu" id="menu2-23">
+
+<nav class="navbar navbar-dropdown navbar-expand-lg">
+    
+    <div class="container">
+
+        <!-- LOGO -->
+        <div class="navbar-brand">
+            <span class="navbar-logo">
+                <a href="https://www.truepass.it">
+                    <img src="assets/images/truepass_logo.svg"
+                         oncontextmenu="return false;"
+                         alt="TruePass Website"
+                         style="height: 3rem;">
+                </a>
+            </span>
         </div>
-    </nav>
+
+        <!-- TOGGLER MOBILE -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- MENU -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav nav-dropdown ms-auto" data-app-modern-menu="true">
+
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-4" href="#top"
+						data-it="Home"
+						data-en="Home">
+						Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-4"
+                       href="index.html#features1-1i"
+						data-it="Vantaggi"
+						data-en="Benefits">
+						Vantaggi
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-4"
+                       href="index.html#features13-1"
+						data-it="Moduli"
+						data-en="Features">
+						Moduli
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-4"
+                       href="index.html#content4-1q"
+						data-it="Licenze"
+						data-en="Licensing">
+						Licenze
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-4"
+                       href="index.html#form5-1m"
+						data-it="Contatti"
+						data-en="Contact">
+						Contatti
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- LANG + BUTTON -->
+            <div class="d-flex align-items-center gap-2 ms-lg-3">
+
+                <div class="lang-switch d-flex gap-1">
+
+                    <button id="btn-it"
+                            class="lang-btn active"
+                            onclick="setLang('it')">
+                        IT
+                    </button>
+
+                    <button id="btn-en"
+                            class="lang-btn"
+                            onclick="setLang('en')">
+                        EN
+                    </button>
+
+                </div>
+
+                <div class="navbar-buttons mbr-section-btn">
+                    <a class="btn btn-primary display-4"
+                       target="_blank"
+                       href="http://www.truepass.it"
+						data-it="Accedi"
+						data-en="Sign in">
+						Accedi
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
 </section>
 
+<!--SEZIONE HERO-->
 <section data-bs-version="5.1" class="header14 cid-sFzxmVl7J6" id="header14-1f">
 
     <div class="container">
@@ -226,10 +361,24 @@
             </div>
             <div class="col-12 col-md">
                 <div class="text-wrapper">
-                    <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2"><strong>La piattaforma per Digital Product Passport, tracciabilità e autenticità.</strong></h1>
-                    <p class="mbr-text mbr-fonts-style display-7">Gestisci dati, conformità e verifiche del prodotto&nbsp;<strong>in un unico sistema integrato</strong>.</p>
-                    <div class="mbr-section-btn mt-3"><a class="btn btn-secondary display-4" href="index.html#form5-1m">Richiedi demo</a>
-                        <a class="btn btn-primary display-4" href="index.html#features1-1i">Scopri di più</a></div>
+                    <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2">
+					<span
+						data-it="<strong>La piattaforma per Digital Product Passport, tracciabilità e autenticità.</strong>"
+						data-en="<strong>The platform for Digital Product Passport, traceability and authenticity.</strong>"
+						<strong>La piattaforma per Digital Product Passport, tracciabilità e autenticità.</strong>
+					</span>
+					</h1>
+                    <p class="mbr-text mbr-fonts-style display-7">
+					<span
+						data-it="Gestisci dati, conformità e verifiche del prodotto&nbsp;<strong>in un unico sistema integrato</strong>."
+						data-en="Manage product data, compliance&nbsp;and verification<strong> all in one integrated system</strong>."					
+						Gestisci dati, conformità e verifiche del prodotto&nbsp;<strong>in un unico sistema integrato</strong>.
+					</span>
+					</p>
+ 					<div class="mbr-section-btn mt-3">
+						<a class="btn btn-secondary display-4" href="index.html#form5-1m"><span data-it="Richiedi demo"data-en="Request demo">Richiedi demo</span></a>					
+						<a class="btn btn-primary display-4" href="index.html#features1-1i"><span data-it="Scopri di più"data-en="Learn more">Scopri di più</span></a>
+					</div>
                 </div>
             </div>
         </div>
@@ -241,8 +390,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <h2 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">Controllo totale. Zero complessità.</h2>
-                
+                <h2 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"
+				data-it="Controllo totale. Zero complessità."
+				data-en="Total control. Zero complexity.">
+				Controllo totale. Zero complessità.
+				</h2>
             </div>
         </div>
         <div class="row">
@@ -252,8 +404,16 @@
                         <div class="iconfont-wrapper">
                             <span class="mbr-iconfont mobi-mbri-touch-swipe mobi-mbri" style="color: rgb(170, 0, 0); fill: rgb(170, 0, 0);"></span>
                         </div>
-                        <h5 class="card-title mbr-fonts-style display-5"><strong>Tracciabilità</strong><br><strong>operativa</strong></h5>
-                        <p class="card-text mbr-fonts-style display-7">Controlla ogni fase, dall’ordine alla consegna, in un unico flusso e in tempo reale.</p>
+                        <h5 class="card-title mbr-fonts-style display-5"
+						data-it="<strong>Tracciabilità</strong><br><strong>operativa</strong>"
+						data-en="<strong>Operational</strong><br><strong>traceability</strong>">
+						<strong>Tracciabilità</strong><br><strong>operativa</strong>
+						</h5>
+                        <p class="card-text mbr-fonts-style display-7"
+						data-it="Controlla ogni fase, dall’ordine alla consegna, in un unico flusso e in tempo reale."
+						data-en="Monitor every step, from order to delivery, in a single real-time workflow.">
+						Controlla ogni fase, dall’ordine alla consegna, in un unico flusso e in tempo reale.
+						</p>
                     </div>
                 </div>
             </div>
@@ -263,8 +423,16 @@
                         <div class="iconfont-wrapper">
                             <span class="mbr-iconfont mobi-mbri-search mobi-mbri" style="color: rgb(170, 0, 0); fill: rgb(170, 0, 0);"></span>
                         </div>
-                        <h5 class="card-title mbr-fonts-style display-5"><strong>Verifica</strong><br><strong>autenticità</strong></h5>
-                        <p class="card-text mbr-fonts-style display-7">Proteggi i tuoi prodotti e offri ai tuoi clienti un modo semplice e immediato per verificarli.</p>
+                        <h5 class="card-title mbr-fonts-style display-5"
+						data-it="<strong>Verifica</strong><br><strong>autenticità</strong>"
+						data-en="<strong>Authenticity</strong><br><strong>verification</strong>">
+						<strong>Verifica</strong><br><strong>autenticità</strong>
+						</h5>
+                        <p class="card-text mbr-fonts-style display-7"
+						data-it="Proteggi i tuoi prodotti e offri ai tuoi clienti un modo semplice e immediato per verificarli."
+						data-en="Protect your products and give your customers a simple and instant way to verify them.">					
+						Proteggi i tuoi prodotti e offri ai tuoi clienti un modo semplice e immediato per verificarli.
+						</p>
                     </div>
                 </div>
             </div>
@@ -274,8 +442,16 @@
                         <div class="iconfont-wrapper">
                             <span class="mbr-iconfont mobi-mbri-contact-form mobi-mbri" style="color: rgb(170, 0, 0); fill: rgb(170, 0, 0);"></span>
                         </div>
-                        <h5 class="card-title mbr-fonts-style display-5"><strong>Passaporto</strong><br><strong>digitale</strong></h5>
-                        <p class="card-text mbr-fonts-style display-7">Rendi ogni prodotto conforme alle normative europee con un passaporto digitale integrato.</p>
+                        <h5 class="card-title mbr-fonts-style display-5"
+						data-it="<strong>Passaporto</strong><br><strong>digitale</strong>"
+                        data-en="<strong>Digital</strong><br><strong>passport</strong>">
+						<strong>Passaporto</strong><br><strong>digitale</strong>
+						</h5>
+						<p class="card-text mbr-fonts-style display-7"
+						data-it="Rendi ogni prodotto conforme alle normative europee con un passaporto digitale integrato."
+						data-en="Ensure every product complies with European regulations through an integrated digital product passport.">
+						Rendi ogni prodotto conforme alle normative europee con un passaporto digitale integrato.
+						</p>
                     </div>
                 </div>
             </div>
@@ -285,8 +461,16 @@
                         <div class="iconfont-wrapper">
                             <span class="mbr-iconfont mobi-mbri-sun mobi-mbri" style="color: rgb(170, 0, 0); fill: rgb(170, 0, 0);"></span>
                         </div>
-                        <h5 class="card-title mbr-fonts-style display-5"><strong>Sostenibilità</strong><br><strong>e ESG</strong></h5>
-                        <p class="card-text mbr-fonts-style display-7">Traccia e documenta l’impatto ambientale e la conformità ESG dei tuoi prodotti.</p>
+                        <h5 class="card-title mbr-fonts-style display-5"
+						data-it="<strong>Sostenibilità</strong><br><strong>e ESG</strong>"
+						data-en="<strong>Sustainability</strong><br><strong>& ESG</strong>">
+						<strong>Sostenibilità</strong><br><strong>e ESG</strong>
+						</h5>
+                        <p class="card-text mbr-fonts-style display-7"
+						data-it="Traccia e documenta l’impatto ambientale e la conformità ESG dei tuoi prodotti."
+						data-en="Track and document the environmental impact and ESG compliance of your products.">
+						Traccia e documenta l’impatto ambientale e la conformità ESG dei tuoi prodotti.
+						</p>
                     </div>
                 </div>
             </div>
@@ -305,10 +489,17 @@
             </div>
             <div class="col-12 col-md">
                 <div class="text-wrapper">
-                    <h3 class="mbr-section-title mbr-fonts-style mb-0 display-2">
-                        Il Digital Product Passport (DPP).</h3>
-                    <p class="mbr-text mbr-fonts-style display-7"><br>Il DPP è diventato obbligatorio con il regolamento ESPR (Ecodesign for Sustainable Products Regulation), entrato in vigore nel 2024.<br>Entro il 2030 sarà richiesto per la maggior parte dei prodotti immessi sul mercato europeo.<br>Richiede informazioni su origine dei materiali, processi produttivi, impatto ambientale, composizione, riparabilità e smaltimento.<br><br><strong>TRUEPASS</strong> ti aiuta a rendere la tua organizzazione conforme a questi requisiti.<br></p>
-                    <div class="mbr-section-btn mt-3"><a class="btn btn-secondary display-4" href="index.html#form5-1m">Richiedi demo</a></div>
+                    <h3 class="mbr-section-title mbr-fonts-style mb-0 display-2"
+						data-it="Il Digital Product Passport (DPP)."
+						data-en="The Digital Product Passport (DPP).">
+                        Il Digital Product Passport (DPP).
+					</h3>
+                    <p class="mbr-text mbr-fonts-style display-7"
+						data-it="<br>Il DPP è diventato obbligatorio con il regolamento ESPR (Ecodesign for Sustainable Products Regulation), entrato in vigore nel 2024.<br>Entro il 2030 sarà richiesto per la maggior parte dei prodotti immessi sul mercato europeo.<br>Richiede informazioni su origine dei materiali, processi produttivi, impatto ambientale, composizione, riparabilità e smaltimento.<br><br><strong>TRUEPASS</strong> ti aiuta a rendere la tua organizzazione conforme a questi requisiti.<br>"
+						data-en="<br>The Digital Product Passport became mandatory under the ESPR (Ecodesign for Sustainable Products Regulation), effective from 2024.<br>By 2030, it will apply to most products placed on the European market.<br>The regulation requires detailed information on material sourcing, production processes, environmental impact, composition, repairability, and end-of-life disposal.<br><br><strong>TRUEPASS</strong> helps your organization meet these compliance requirements efficiently and securely.<br>">
+						Il DPP è diventato obbligatorio con il regolamento ESPR (Ecodesign for Sustainable Products Regulation), entrato in vigore nel 2024.<br>Entro il 2030 sarà richiesto per la maggior parte dei prodotti immessi sul mercato europeo.<br>Richiede informazioni su origine dei materiali, processi produttivi, impatto ambientale, composizione, riparabilità e smaltimento.<br><br><strong>TRUEPASS</strong> ti aiuta a rendere la tua organizzazione conforme a questi requisiti.<br>											
+					</p>
+                    <a class="btn btn-secondary display-4" href="index.html#form5-1m"><span data-it="Richiedi demo"data-en="Request demo">Richiedi demo</span></a>
                 </div>
             </div>
         </div>
@@ -320,8 +511,10 @@
 <section data-bs-version="5.1" class="features1 cid-sFzyUE9AaP" id="how-it-works">
 
   <div class="container">
-    <h2 class="mbr-section-title align-center mbr-fonts-style mb-0 display-2">
-      Come funziona.
+    <h2 class="mbr-section-title align-center mbr-fonts-style mb-0 display-2"
+		data-it="Come funziona."
+		data-en="How it works.">
+		Come funziona.
     </h2>
 
 <div class="row mt-4">
@@ -329,10 +522,15 @@
     <div class="col-md-3">
         <div class="tp-step tp-reveal">
             <div class="tp-step-number">01</div>
-            <h4 class="card-title mbr-fonts-style display-5"><strong>Crea<br>il prodotto</strong></h4>
-            <p class="card-text mbr-fonts-style display-7">
-                Inserisci o importa i dati del prodotto,
-                materiali e lotti di etichette/QRcode.
+            <h4 class="card-title mbr-fonts-style display-5"
+				data-it="<strong>Crea<br>il prodotto</strong>"
+				data-en="<strong>Create<br>the product</strong>">			
+				<strong>Crea<br>il prodotto</strong>
+			</h4>
+            <p class="card-text mbr-fonts-style display-7"
+				data-it="Inserisci o importa i dati del prodotto, materiali e lotti di etichette/QRcode."
+				data-en="Enter or import product data, materials, and label/QR code batches.">
+                Inserisci o importa i dati del prodotto, materiali e lotti di etichette/QRcode.
             </p>
         </div>
     </div>
@@ -340,8 +538,14 @@
     <div class="col-md-3">
         <div class="tp-step tp-reveal">
             <div class="tp-step-number">02</div>
-            <h4 class="card-title mbr-fonts-style display-5"><strong>Genera<br>il passaporto</strong></h4>
-            <p class="card-text mbr-fonts-style display-7">
+            <h4 class="card-title mbr-fonts-style display-5"
+				data-it="<strong>Genera<br>il passaporto</strong>"
+				data-en="<strong>Generate<br>the passport</strong>">
+				<strong>Genera<br>il passaporto</strong>
+			</h4>
+            <p class="card-text mbr-fonts-style display-7"
+				data-it="TRUEPASS crea automaticamente il DPP per ogni tuo prodotto."
+				data-en="TRUEPASS automatically generates the DPP for each product.">
                 TRUEPASS crea automaticamente il DPP per ogni tuo prodotto.
             </p>
         </div>
@@ -350,9 +554,15 @@
     <div class="col-md-3">
         <div class="tp-step tp-reveal">
             <div class="tp-step-number">03</div>
-            <h4 class="card-title mbr-fonts-style display-5"><strong>Verifica<br>l'autenticità</strong></h4>
-            <p class="card-text mbr-fonts-style display-7">
-                Controlla con una scansione sei il prodotto è autentico.
+            <h4 class="card-title mbr-fonts-style display-5"
+				data-it="<strong>Verifica<br>l'autenticità</strong>"
+				data-en="<strong>Verify<br>authenticity</strong>">
+				<strong>Verifica<br>l'autenticità</strong>
+			</h4>
+            <p class="card-text mbr-fonts-style display-7"
+				data-it="Controlla con una scansione se il prodotto è autentico."
+				data-en="Check whether the product is authentic with a simple scan.">
+                Controlla con una scansione se il prodotto è autentico.
             </p>
         </div>
 
@@ -361,8 +571,14 @@
     <div class="col-md-3">
         <div class="tp-step tp-reveal">
             <div class="tp-step-number">04</div>
-            <h4 class="card-title mbr-fonts-style display-5"><strong>Consulta<br>il DPP</strong></h4>
-            <p class="card-text mbr-fonts-style display-7">
+            <h4 class="card-title mbr-fonts-style display-5"
+				data-it="<strong>Consulta<br>il DPP</strong>"
+				data-en="<strong>View<br>the DPP</strong>">
+				<strong>Consulta<br>il DPP</strong>"
+			</h4>
+            <p class="card-text mbr-fonts-style display-7"
+				data-it="Leggi i dati ed il passaporto del prodotto via QRcode."
+				data-en="Access product data and the Digital Product Passport via QR code.">
                 Leggi i dati ed il passaporto del prodotto via QRcode.
             </p>
         </div>
@@ -383,7 +599,9 @@
 
             <div class="col-12 col-lg-8 text-center">
 
-                <h2 class="mbr-section-title mbr-fonts-style display-2">
+                <h2 class="mbr-section-title mbr-fonts-style display-2"
+					data-it="A chi si rivolge."
+					data-en="Who it's for.">
                     A chi si rivolge.
                 </h2>
 
@@ -404,13 +622,16 @@
                               style="color: rgb(170,0,0)"></span>
                     </div>
 
-                    <h4 class="card-title mbr-fonts-style display-5">
+                    <h4 class="card-title mbr-fonts-style display-5"
+						data-it="<strong>Moda &amp; Lusso</strong>"
+						data-en="<strong>Fashion &amp; Luxury</strong>">
                         <strong>Moda &amp; Lusso</strong>
                     </h4>
 
-                    <p class="card-text mbr-fonts-style display-7">
-                        Proteggi i prodotti dalla contraffazione
-                        e offri autenticità verificabile tramite QRcode e DPP.
+                    <p class="card-text mbr-fonts-style display-7"
+						data-it="Proteggi i prodotti dalla contraffazione e offri autenticità verificabile tramite QRcode e DPP."
+						data-en="Protect products from counterfeiting and provide verifiable authenticity through QR codes and the DPP.">
+                        Proteggi i prodotti dalla contraffazione e offri autenticità verificabile tramite QRcode e DPP.
                     </p>
 
                 </div>
@@ -428,13 +649,16 @@
                               style="color: rgb(170,0,0);"></span>
                     </div>
 
-                    <h4 class="card-title mbr-fonts-style display-5">
+                    <h4 class="card-title mbr-fonts-style display-5"
+						data-it="<strong>Produzione Industriale</strong>"
+						data-en="<strong>Industrial Manufacturing</strong>">
                         <strong>Produzione Industriale</strong>
                     </h4>
 
-                    <p class="card-text mbr-fonts-style display-7">
-                        Traccia ordini, lotti, componenti e processi
-                        lungo tutta la supply chain.
+                    <p class="card-text mbr-fonts-style display-7"
+						data-it="Traccia ordini, lotti, componenti e processi lungo tutta la supply chain."
+						data-en="Track orders, batches, components, and processes across the entire supply chain.">			
+                        Traccia ordini, lotti, componenti e processi lungo tutta la supply chain.
                     </p>
 
                 </div>
@@ -452,13 +676,16 @@
                               style="color: rgb(170,0,0);"></span>
                     </div>
 
-                    <h4 class="card-title mbr-fonts-style display-5">
+                    <h4 class="card-title mbr-fonts-style display-5"
+						data-it="<strong>Automotive</strong>"
+						data-en="<strong>Automotive</strong>">
                         <strong>Automotive</strong>
                     </h4>
 
-                    <p class="card-text mbr-fonts-style display-7">
-                        Gestisci serializzazione, conformità
-                        e tracciabilità dei componenti.
+                    <p class="card-text mbr-fonts-style display-7"
+						data-it="Gestisci serializzazione, conformità e tracciabilità dei componenti."
+						data-en="Manage serialization, compliance, and component traceability.">						
+                        Gestisci serializzazione, conformità e tracciabilità dei componenti.
                     </p>
 
                 </div>
@@ -476,13 +703,16 @@
                               style="color: rgb(170,0,0);"></span>
                     </div>
 
-                    <h4 class="card-title mbr-fonts-style display-5">
+                    <h4 class="card-title mbr-fonts-style display-5"
+						data-it="<strong>Cosmetica</strong>"
+						data-en="<strong>Cosmetics</strong>">
                         <strong>Cosmetica</strong>
                     </h4>
 
-                    <p class="card-text mbr-fonts-style display-7">
-                        Controlla ingredienti, lotti e conformità normativa
-                        con verifica immediata del prodotto.
+                    <p class="card-text mbr-fonts-style display-7"
+						data-it="Controlla ingredienti, lotti e conformità normativa con verifica immediata del prodotto."
+						data-en="Monitor ingredients, batches, and regulatory compliance with instant product verification.">
+                        Controlla ingredienti, lotti e conformità normativa con verifica immediata del prodotto.
                     </p>
 
                 </div>
@@ -500,13 +730,16 @@
                               style="color: rgb(170,0,0);"></span>
                     </div>
 
-                    <h4 class="card-title mbr-fonts-style display-5">
+                    <h4 class="card-title mbr-fonts-style display-5"
+						data-it="<strong>Food Premium</strong>"
+						data-en="<strong>Premium Food</strong>">
                         <strong>Food Premium</strong>
                     </h4>
 
-                    <p class="card-text mbr-fonts-style display-7">
-                        Valorizza origine, autenticità e trasparenza
-                        della filiera alimentare.
+                    <p class="card-text mbr-fonts-style display-7"
+						data-it="Valorizza origine, autenticità e trasparenza della filiera alimentare."
+						data-en="Highlight origin, authenticity, and supply chain transparency in the food industry.">
+                        Valorizza origine, autenticità e trasparenza della filiera alimentare.
                     </p>
 
                 </div>
@@ -524,13 +757,16 @@
                               style="color: rgb(170,0,0);"></span>
                     </div>
 
-                    <h4 class="card-title mbr-fonts-style display-5">
+                    <h4 class="card-title mbr-fonts-style display-5"
+						data-it="<strong>Design &amp; Arredo</strong>"
+						data-en="<strong>Design &amp; Furniture</strong>">
                         <strong>Design &amp; Arredo</strong>
                     </h4>
 
-                    <p class="card-text mbr-fonts-style display-7">
-                        Documenta materiali, sostenibilità
-                        e ciclo di vita dei prodotti.
+                    <p class="card-text mbr-fonts-style display-7"
+						data-it="Documenta materiali, sostenibilità e ciclo di vita dei prodotti."
+						data-en="Document materials, sustainability, and the full product lifecycle.">
+                        Documenta materiali, sostenibilità e ciclo di vita dei prodotti.
                     </p>
 
                 </div>
@@ -552,10 +788,16 @@
             <div class="col-12 col-lg-6">
                 <div class="card-wrapper">
                     <div class="card-box align-left">
-                        <h4 class="card-title mbr-fonts-style mb-4 display-2">
-                            I moduli.</h4>
-                        <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                            Gestisci i tuoi prodotti in modo digitale, sicuro e conforme lungo tutta la filiera.</p>							
+                        <h4 class="card-title mbr-fonts-style mb-4 display-2"
+							data-it="I moduli"
+							data-en="Features">
+                            I moduli.
+						</h4>
+                        <p class="mbr-text mbr-fonts-style mb-4 display-7"
+							data-it="Gestisci i tuoi prodotti in modo digitale, sicuro e conforme lungo tutta la filiera."
+							data-en="Manage your products securely and in compliance across the entire supply chain.">
+                            Gestisci i tuoi prodotti in modo digitale, sicuro e conforme lungo tutta la filiera.
+						</p>							
 						<div class="module-preview-wrap mb-4">
 							<div class="saas-mockup">
 								<div class="saas-glow"></div>
@@ -566,7 +808,7 @@
 								</div>
 							</div>
 						</div>
-                        <div class="mbr-section-btn"><a class="btn btn-secondary display-4" href="index.html#form5-1m">Richiedi demo</a></div>
+                        <a class="btn btn-secondary display-4" href="index.html#form5-1m"><span data-it="Richiedi demo"data-en="Request demo">Richiedi demo</span></a>
                     </div>	
                 </div>
             </div>
@@ -577,8 +819,16 @@
                             <span class="mbr-iconfont mbrib-edit"></span>						
                         </div>
                         <div class="text-box">
-                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"><strong>Flusso ordini</strong></h4>
-                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Gestione dell’intero flusso (NEW → SHIPPED) e storico completo delle operazioni.</h5>
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"
+								data-it="<strong>Flusso ordini</strong>"
+								data-en="<strong>Order Flow</strong>">
+								<strong>Flusso ordini</strong>
+							</h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4"
+								data-it="Gestione dell’intero flusso (NEW → SHIPPED) e storico completo delle operazioni."
+								data-en="Management of the entire workflow (NEW → SHIPPED) with full operation history.">
+								Gestione dell’intero flusso (NEW → SHIPPED) e storico completo delle operazioni.
+							</h5>
                         </div>
                     </div>
                 </div><div class="item features-without-image">
@@ -587,8 +837,16 @@
                             <span class="mbr-iconfont mbrib-sale"></span>
                         </div>
                         <div class="text-box">
-                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"><strong>Etichette e lotti</strong></h4>
-                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Generazione di etichette e codici conformi alle direttive DPP, gestione degli stati dei lotti e tracciamento completo.</h5>
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"
+								data-it="<strong>Etichette e lotti</strong>"
+								data-en="<strong>Labels & Batches</strong>">
+								<strong>Etichette e lotti</strong>
+							</h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4"
+								data-it="Generazione di etichette e codici conformi alle direttive DPP, gestione degli stati dei lotti e tracciamento completo."
+								data-en="Generation of DPP-compliant labels and codes, batch status management, and full traceability.">
+								Generazione di etichette e codici conformi alle direttive DPP, gestione degli stati dei lotti e tracciamento completo.
+							</h5>							
                         </div>
                     </div>
                 </div><div class="item features-without-image">
@@ -597,8 +855,16 @@
                             <span class="mbr-iconfont mbrib-shopping-cart"></span>
                         </div>
                         <div class="text-box">
-                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"><strong>Prodotti &amp; DPP</strong></h4>
-                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Gestione avanzata del Digital Product Passport con dati su materiali, supply chain, conformità, SVHC e ciclo di vita.</h5>
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"
+								data-it="<strong>Prodotti &amp; DPP</strong>"
+								data-en="<strong>Products &amp; DPP</strong>">
+								<strong>Prodotti &amp; DPP</strong>
+							</h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4"
+								data-it="Gestione avanzata del Digital Product Passport con dati su materiali, supply chain, conformità, SVHC e ciclo di vita."
+								data-en="Advanced Digital Product Passport management, including materials, supply chain data, compliance, SVHC, and lifecycle information.">
+								Gestione avanzata del Digital Product Passport con dati su materiali, supply chain, conformità, SVHC e ciclo di vita.
+							</h5>						
                         </div>
                     </div>
                 </div><div class="item features-without-image">
@@ -607,8 +873,16 @@
                             <span class="mbr-iconfont mbrib-search"></span>
                         </div>
                         <div class="text-box">
-                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"><strong>Verifica pubblica</strong></h4>
-                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Sistema pubblico anonimo per la verifica di autenticità, DPP e certificati.</h5>
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"
+								data-it="<strong>Verifica pubblica</strong>"
+								data-en="<strong>Public verification</strong>">
+								<strong>Verifica pubblica</strong>
+							</h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4"
+								data-it="Sistema pubblico anonimo per la verifica di autenticità, DPP e certificati."
+								data-en="Anonymous public system for verifying product authenticity, DPP data, and certificates.">
+								Sistema pubblico anonimo per la verifica di autenticità, DPP e certificati.
+							</h5>
                         </div>
                     </div>
                 </div>
@@ -619,8 +893,16 @@
                             <span class="mbr-iconfont mbrib-up-down"></span>
                         </div>
                         <div class="text-box">
-                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"><strong>Integrazioni</strong></h4>
-                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Importazione e sincronizzazione dati con ERP e PLM, Webhook e API.</h5>
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"
+								data-it="<strong>Integrazioni</strong>"
+								data-en="<strong>Integrations</strong>">
+								<strong>Integrazioni</strong>
+							</h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4"
+								data-it="Importazione e sincronizzazione dati con ERP e PLM, Webhook e API."
+								data-en="Data import and synchronization with ERP and PLM systems, webhooks, and APIs.">
+								Importazione e sincronizzazione dati con ERP e PLM, Webhook e API.
+							</h5>						
                         </div>
                     </div>
                 </div><div class="item features-without-image">
@@ -629,8 +911,16 @@
                             <span class="mbr-iconfont mbrib-users"></span>
                         </div>
                         <div class="text-box">
-                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"><strong>Governance</strong></h4>
-                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Pannello amministrativo per utenti, ruoli e configurazione dei flussi operativi.</h5>
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"
+								data-it="<strong>Governance</strong>"
+								data-en="<strong>Governance</strong>">
+								<strong>Governance</strong>
+							</h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4"
+								data-it="Importazione e sincronizzazione dati con ERP e PLM, Webhook e API."
+								data-en="Administrative panel for users, roles, and workflow configuration.">
+								Pannello amministrativo per utenti, ruoli e configurazione dei flussi operativi.
+							</h5>						
                         </div>
                     </div>
                 </div><div class="item features-without-image">
@@ -639,8 +929,16 @@
                             <span class="mbr-iconfont mbrib-growing-chart"></span>
                         </div>
                         <div class="text-box">
-                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"><strong>Analytics</strong></h4>
-                            <h5 class="icon-text mbr-black mbr-fonts-style display-4">Dashboard per monitoraggio della filiera e rilevamento di anomalie e frodi.</h5>
+                            <h4 class="icon-title mbr-black mbr-fonts-style display-7"
+								data-it="<strong>Analytics</strong>"
+								data-en="<strong>Analytics</strong>">
+								<strong>Analytics</strong>
+							</h4>
+                            <h5 class="icon-text mbr-black mbr-fonts-style display-4"
+								data-it="Dashboard per monitoraggio della filiera e rilevamento di anomalie e frodi."
+								data-en="Dashboard for supply chain monitoring and fraud/anomaly detection.">
+								Dashboard per monitoraggio della filiera e rilevamento di anomalie e frodi.
+							</h5>						
                         </div>
                     </div>
                 </div>
@@ -657,9 +955,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="title col-md-12 col-lg-10">
-                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">Il sistema di licensing.</h3>
-                
-                
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"
+					data-it="Il sistema di licensing."
+					data-en="Licensing Plans.">
+					Il sistema di licensing.
+				</h3>
             </div>
         </div>
     </div>
@@ -674,8 +974,11 @@
             <div class="col-12 col-md-6 align-center col-lg-3">
                 <div class="plan" style="background-color: rgb(170,0,0,0.16)">
                     <div class="plan-header">
-                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
-                            <strong>Standard</strong></h6>
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5"
+							data-it="<strong>Standard</strong>"
+							data-en="<strong>Standard</strong>">
+                            <strong>Standard</strong>
+						</h6>
                         <div class="plan-price">
                             <p class="price mbr-fonts-style m-0 display-2"></p>
                             <p class="price-term mbr-fonts-style mb-3 display-7"></p>
@@ -683,8 +986,22 @@
                     </div>
                     <div class="plan-body">
                         <div class="plan-list mb-4">
-                            <ul class="list-group mbr-fonts-style list-group-flush display-4">
-                                <li class="list-group-item">fino a 5 utenti</li><li class="list-group-item">fino a 5.000 etichette</li><li class="list-group-item">fino a 10.000 scansioni/mese</li>
+                            <ul class="list-group mbr-fonts-style list-group-flush display-4">							
+                                <li class="list-group-item"
+									data-it="fino a 5 utenti"
+									data-en="up to 5 users">
+									fino a 5 utenti
+								</li>
+								<li class="list-group-item"
+									data-it="fino a 5.000 etichette"
+									data-en="up to 5,000 labels">
+									fino a 5.000 etichette
+								</li>
+								<li class="list-group-item"
+									data-it="fino a 10.000 scansioni/mese"
+									data-en="up to 10,000 scans/month">								
+									fino a 10.000 scansioni/mese
+								</li>
                             </ul>
                         </div>
                         
@@ -694,8 +1011,11 @@
             <div class="col-12 col-md-6 align-center col-lg-3">
                 <div class="plan" style="background-color: rgb(170,0,0,0.16)">
                     <div class="plan-header">
-                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
-                            <strong>Professional</strong></h6>
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5"
+							data-it="<strong>Professional</strong>"
+							data-en="<strong>Professional</strong>">
+                            <strong>Professional</strong>
+						</h6>
                         <div class="plan-price">
                             <p class="price mbr-fonts-style m-0 display-2"></p>
                             <p class="price-term mbr-fonts-style mb-3 display-7"></p>
@@ -704,8 +1024,22 @@
                     <div class="plan-body">
                         <div class="plan-list mb-4">
                             <ul class="list-group mbr-fonts-style list-group-flush display-4">
-                                <li class="list-group-item">fino a 10 utenti</li><li class="list-group-item">fino a 10.000 etichette</li><li class="list-group-item">fino a 50.000 scansioni/mese</li>
-                            </ul>
+                                <li class="list-group-item"
+									data-it="fino a 10 utenti"
+									data-en="up to 10 users">
+									fino a 10 utenti
+								</li>
+								<li class="list-group-item"
+									data-it="fino a 10.000 etichette"
+									data-en="up to 10,000 labels">
+									fino a 10.000 etichette
+								</li>
+								<li class="list-group-item"
+									data-it="fino a 50.000 scansioni/mese"
+									data-en="up to 50,000 scans/month">								
+									fino a 50.000 scansioni/mese
+								</li>
+							</ul>
                         </div>
                         
                     </div>
@@ -714,8 +1048,11 @@
             <div class="col-12 col-md-6 align-center col-lg-3">
                 <div class="plan" style="background-color: rgb(170,0,0,0.16)">
                     <div class="plan-header">
-                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
-                            <strong>Enterprise</strong></h6>
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5"
+							data-it="<strong>Enterprise</strong>"
+							data-en="<strong>Enterprise</strong>">
+                            <strong>Enterprise</strong>
+						</h6>
                         <div class="plan-price">
                             <p class="price mbr-fonts-style m-0 display-2"></p>
                             <p class="price-term mbr-fonts-style mb-3 display-7"></p>
@@ -724,8 +1061,22 @@
                     <div class="plan-body">
                         <div class="plan-list mb-4">
                             <ul class="list-group mbr-fonts-style list-group-flush display-4">
-                                <li class="list-group-item">fino a 20 utenti</li><li class="list-group-item">fino a 25.000 etichette</li><li class="list-group-item">fino a 150.000 scansioni/mese</li>
-                            </ul>
+                                <li class="list-group-item"
+									data-it="fino a 20 utenti"
+									data-en="up to 20 users">
+									fino a 20 utenti
+								</li>
+								<li class="list-group-item"
+									data-it="fino a 25.000 etichette"
+									data-en="up to 25,000 labels">
+									fino a 25.000 etichette
+								</li>
+								<li class="list-group-item"
+									data-it="fino a 150.000 scansioni/mese"
+									data-en="up to 150,000 scans/month">								
+									fino a 150.000 scansioni/mese
+								</li>
+							</ul>
                         </div>
                         
                     </div>
@@ -734,9 +1085,11 @@
             <div class="col-12 col-md-6 align-center col-lg-3">
                 <div class="plan" style="background-color: rgb(170,0,0,0.16)">
                     <div class="plan-header">
-                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5"
+							data-it="<strong>Unlimited</strong>"
+							data-en="<strong>Unlimited</strong>">
                             <strong>Unlimited</strong>
-                        </h6>
+						</h6>
                         <div class="plan-price">
                             <p class="price mbr-fonts-style m-0 display-2"></p>
                             <p class="price-term mbr-fonts-style mb-3 display-7"></p>
@@ -745,8 +1098,22 @@
                     <div class="plan-body">
                         <div class="plan-list mb-4">
                             <ul class="list-group mbr-fonts-style list-group-flush display-4">
-                                <li class="list-group-item">utenti illimitati</li><li class="list-group-item">etichette illimitate</li><li class="list-group-item">scansioni illimitate</li>
-                            </ul>
+                                <li class="list-group-item"
+									data-it="utenti illimitati"
+									data-en="unlimited users">
+									utenti illimitati
+								</li>
+								<li class="list-group-item"
+									data-it="etichette illimitate"
+									data-en="unlimited labels">
+									etichette illimitate
+								</li>
+								<li class="list-group-item"
+									data-it="scansioni illimitate"
+									data-en="unlimited scans">								
+									scansioni illimitate
+								</li>
+							</ul>
                         </div>
                         
                     </div>
@@ -802,12 +1169,16 @@ Il team di TRUEPASS</div>
 
         <div class="mbr-section-head">
 
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"
+				data-it="Contattaci."
+				data-en="Contact us.">
                 Contattaci.
             </h4>
 
-            <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7">
-                Lasciaci un messaggio per informazioni o per richiedere una demo.
+            <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7"
+				data-it="Lascia un messaggio per informazioni o per richiedere una demo."
+				data-en="Get in touch for more information or to request a demo.">				
+                Lascia un messaggio per informazioni o per richiedere una demo.
             </h4>
 
         </div>
@@ -828,20 +1199,21 @@ Il team di TRUEPASS</div>
                             id="success-message"
                             hidden
                             class="alert alert-success col-12"
+							data-it="Grazie per averci contattato,<br>ti risponderemo al più presto!<br>Il team di TRUEPASS"
+							data-en="Thank you for contacting us.<br>Our team will get back to you shortly.<br>The TRUEPASS team"
+                            Grazie per averci contattato,<br>ti risponderemo al più presto!<br>Il team di TRUEPASS
                         >
-                            Grazie per averci contattato,
-                            ti risponderemo al più presto!
-                            <br>
-                            Il team di TRUEPASS
-                        </div>
+						</div>
 
                         <div
                             id="error-message"
                             hidden
                             class="alert alert-danger col-12"
-                        >
+							data-it="Oops... qualcosa è andato storto!"
+							data-en="Oops... something went wrong. Please try again."
                             Oops... qualcosa è andato storto!
-                        </div>
+						>
+						</div>
 
                     </div>
 
@@ -852,6 +1224,8 @@ Il team di TRUEPASS</div>
                             <input
                                 type="text"
                                 name="name"
+								data-it-placeholder="Nome e Cognome"
+								data-en-placeholder="Full Name"
                                 placeholder="Nome e Cognome"
                                 class="form-control"
                                 id="name-form5-1m"
@@ -865,7 +1239,9 @@ Il team di TRUEPASS</div>
                             <input
                                 type="email"
                                 name="email"
-                                placeholder="E-mail"
+ 								data-it-placeholder="E-mail"
+								data-en-placeholder="Email"                               								
+								placeholder="E-mail"
                                 class="form-control"
                                 id="email-form5-1m"
                                 required
@@ -878,7 +1254,9 @@ Il team di TRUEPASS</div>
                             <input
                                 type="text"
                                 name="Oggetto"
-                                placeholder="Oggetto (es: richiesta informazioni / richiesta demo)"
+ 								data-it-placeholder="Oggetto (es: richiesta informazioni / richiesta demo)"
+								data-en-placeholder="Subject (e.g. information request / demo request)"                                 
+								placeholder="Oggetto (es: richiesta informazioni / richiesta demo)"
                                 class="form-control"
                                 id="url-form5-1m"
                                 required
@@ -890,7 +1268,9 @@ Il team di TRUEPASS</div>
 
                             <textarea
                                 name="Messaggio"
-                                placeholder="Messaggio"
+ 								data-it-placeholder="Messaggio"
+								data-en-placeholder="Message"                                
+								placeholder="Messaggio"
                                 class="form-control"
                                 id="textarea-form5-1m"
                                 required
@@ -911,9 +1291,12 @@ Il team di TRUEPASS</div>
                             <button
                                 type="submit"
                                 class="btn btn-secondary display-4"
+                            
+                                data-it="Invia"
+								data-en="Send">
+								Invia
                             >
-                                Invia
-                            </button>
+							</button>
 
                         </div>
 
@@ -994,11 +1377,50 @@ form.addEventListener('submit', async function(e) {
             <div class="row row-links">
                 <ul class="foot-menu">
                     
-                    
-                    
-                    
-                    
-                <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#top" class="text-white text-primary">Home</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#features1-1i" class="text-primary">Vantaggi</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#features13-1" class="text-primary">Moduli</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#pricing2-1k" class="text-primary">Licenze</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#form5-1m" class="text-primary">Contatti</a></li></ul>
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                    <a class="text-white text-primary" href="index.html#top"
+						data-it="Home"
+						data-en="Home">
+						Home
+                    </a>
+                </li>
+
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                    <a class="text-primary"
+                       href="index.html#features1-1i"
+						data-it="Vantaggi"
+						data-en="Benefits">
+						Vantaggi
+                    </a>
+                </li>
+
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                    <a class="text-primary"
+                       href="index.html#features13-1"
+						data-it="Moduli"
+						data-en="Features">
+						Moduli
+                    </a>
+                </li>
+
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                    <a class="text-primary"
+                       href="index.html#content4-1q"
+						data-it="Licenze"
+						data-en="Licensing">
+						Licenze
+                    </a>
+                </li>
+
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                    <a class="text-primary"
+                       href="index.html#form5-1m"
+						data-it="Contatti"
+						data-en="Contact">
+						Contatti
+                    </a>
+                </li>
+
             </div>
             
             <div class="row row-copirayt">
@@ -1078,6 +1500,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
+<!--SCRIPT PER GESTIONE LINGUA-->
+<script>
+
+function setLang(lang) {
+
+    localStorage.setItem("lang", lang);
+
+    // testi normali
+    document.querySelectorAll("[data-" + lang + "]")
+        .forEach(el => {
+
+            if (
+                el.tagName === "INPUT" ||
+                el.tagName === "TEXTAREA"
+            ) {
+                return;
+            }
+
+            const value =
+                el.getAttribute("data-" + lang);
+
+            if (value) {
+                el.innerHTML = value;
+            }
+
+        });
+
+    // placeholder
+    document.querySelectorAll("[data-" + lang + "-placeholder]")
+        .forEach(el => {
+
+            const value =
+                el.getAttribute("data-" + lang + "-placeholder");
+
+            if (value) {
+                el.placeholder = value;
+            }
+
+        });
+
+    // pulsanti lingua
+    document.querySelectorAll(".lang-btn")
+        .forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+    const active =
+        document.getElementById("btn-" + lang);
+
+    if (active) {
+        active.classList.add("active");
+    }
+
+    document.body.style.visibility = "visible";
+}
+
+	document.addEventListener("DOMContentLoaded", () => {
+
+    const savedLang =
+        localStorage.getItem("lang") || "it";
+
+    setLang(savedLang);
+
+});
+
+</script>
+
 
 </body>
 </html>
